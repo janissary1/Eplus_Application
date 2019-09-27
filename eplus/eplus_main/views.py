@@ -6,4 +6,5 @@ from django.http import HttpResponse
 
 
 def index(request):
-     return HttpResponse("Ayyy lmao")
+     template = loader.get_template('eplus_main/index.html')
+     return render(request, 'eplus_main/index.html')
