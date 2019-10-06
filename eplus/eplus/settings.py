@@ -25,7 +25,7 @@ SECRET_KEY = 'k6t89l4u$2vg7^pfjgo0luih20qci9-&!l_!q&rg8$5*x4=eqi'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['danielbellissimo.ca']
+ALLOWED_HOSTS = ['127.0.0.1','danielbellissimo.ca','192.168.2.91']
 
 
 # Application definition
@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'eplus_main',
 ]
 
 MIDDLEWARE = [
@@ -54,7 +55,7 @@ ROOT_URLCONF = 'eplus.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['eplus_main/templates/'] ,
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,loader
 from django.http import HttpResponse
 
 
@@ -6,5 +6,5 @@ from django.http import HttpResponse
 
 
 def index(request):
-     template = loader.get_template('eplus_main/index.html')
-     return render(request, 'eplus_main/index.html')
+    # template = loader.get_template('/file_upload.html')
+     return render(request, 'eplus_main/file_upload.html')
