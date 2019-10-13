@@ -4,20 +4,48 @@
     <head>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
         <link rel="stylesheet" type="text/css" href="{% static "eplus_main/eplus.css" %}">
-        <link href="https://fonts.googleapis.com/css?family=Prompt&display=swap" rel="stylesheet">    
+        <link href="https://fonts.googleapis.com/css?family=Play&display=swap" rel="stylesheet">
+        <script type="text/javascript" src="{% static "eplus_main/scripts/index.js" %}"></script>
     </head>
     <body>
-    <div class="col-md-4"></div><div class="col-md-4">
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            Uploaded file: <span id="file_name"></span>
+            <btn onclick="compile()">Compile</btn>
+            <div style="bottom: 0; ">
+                <btn class="btn btn-info" onclick="closeModal('modal')">Close</btn>
+            </div>
+        </div>
+    
+    </div>
+
+    </div>
+    <div class="col-md-4">
+        <div class="image-align"><img src="{% static "eplus_main/images/energyplus.jpeg" %}"></div>
+        <div class="image-align"style="font-weight: bold;">This tool uses EnergyPlus, Version 8.9.0</div>
+        <div class="image-align">Maintained by Daniel Bellissimo, Ryerson University</div>
+        <div class="image-align">If you are experiencing errors please email: djbellis@ryerson.ca</div>
+    </div>
+    <div class="col-md-4 preamble-align">
+        <div>
+            <p>
+                This free tool allows you to submit a zipped folder of .idf files which can then be serially processed using EnergyPlus Version 8.9.<br><br>
+                If you would like to check the status of your running batch jobs, please visit the 
+                <a href="jobs" style="font-weight: bold;">jobs</a> page.<br><br>
+                This page works best with any web browser other than Internet Explorer   
+            </p>
+        </div>
         <div class="form-input">
             <form action="fileprocess.php" method="post" enctype="multipart/form-data">
-                <div>Upload a ZIP file containing all your energyplus idf files:</div>
+                <div>Please upload a ZIP file containing all of your energyplus idf files:</div>
                 <div class="btn-wrapper">
-                    <button id="btn" class="btn btn-warning">Upload Zip</button>
-                    <input type="file" name="myfile" />
+                    <button id="btn" class="btn btn-danger">Upload ZiP</button>
+                    <input type="file" onchange="openModal('modal')" id="myfile">
                 </div>
             </form>
         </div>
     </div>
+
     <div class="col-md-4"></div>
 
     </body>
