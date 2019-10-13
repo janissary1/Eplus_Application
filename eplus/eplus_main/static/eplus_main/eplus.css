@@ -56,7 +56,14 @@
 .modal-content {
     background-color: white;
     margin: 5% auto; /* 15% from the top and centered */
-    padding: 50px;
+    padding: 10px;
     width: 20%; /* Could be more or less, depending on screen size */
     height: 20%;
+}
+
+.closebtn {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 10px;
 }

@@ -10,13 +10,19 @@
     <body>
     <div id="modal" class="modal">
         <div class="modal-content">
-            Uploaded file: <span id="file_name"></span>
-            <btn onclick="compile()">Compile</btn>
-            <div style="bottom: 0; ">
-                <btn class="btn btn-info" onclick="closeModal('modal')">Close</btn>
+            <div id="correct_msg">
+                Uploaded file: <span id="file_name"></span>
+            </div>
+            <div>
+                <btn class="btn btn-danger" onclick="compile()">Compile</btn>
+            </div>
+            <div id="error_msg" style="display: none">
+                <h2>Error: uploaded file is not a zip!</h2>
+            </div>
+            <div class="closebtn">
+                <btn class="btn btn-secondary" onclick="closeModal('modal')">Close</btn>
             </div>
         </div>
-    
     </div>
 
     </div>
@@ -32,7 +38,7 @@
                 This free tool allows you to submit a zipped folder of .idf files which can then be serially processed using EnergyPlus Version 8.9.<br><br>
                 If you would like to check the status of your running batch jobs, please visit the 
                 <a href="jobs" style="font-weight: bold;">jobs</a> page.<br><br>
-                This page works best with any web browser other than Internet Explorer   
+                This page works best with Google Chrome  
             </p>
         </div>
         <div class="form-input">

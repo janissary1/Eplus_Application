@@ -1,5 +1,5 @@
 function openModal(modal){
-    document.getElementById(modal).style.display="block";
+    document.getElementById(modal).style.display="flex";
     document.getElementById("file_name").innerHTML = document.getElementById("myfile").files.item(0).name;
 }
 function closeModal(modal){
