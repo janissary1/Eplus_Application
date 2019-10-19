@@ -1,7 +1,7 @@
 from django.shortcuts import render,loader
 from django.http import HttpResponse
 
-
+#kek
 # Create your views here.
 
 
