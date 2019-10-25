@@ -5,12 +5,12 @@ from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 
-
+@login_required
 def index(request):
     # template = loader.get_template('/file_upload.html')
     if request.user.is_authenticated:
-        print(request.user.username)
-        return render(request, 'eplus_main/file_upload.html')
+        context = {"username" : request.user.username}
+        return render(request, 'eplus_main/file_upload.html',context)
     else:
         return redirect(settings.LOGIN_URL_REDIRECT)
 

@@ -14,7 +14,9 @@
         <link href="https://fonts.googleapis.com/css?family=Play&display=swap" rel="stylesheet">
         <script type="text/javascript" src="{% static "eplus_main/scripts/index.js" %}"></script>
         <title>Energyplus</title>
+        {% include "eplus_main/navbar.html" %}
     </head>
+
     <body>
         <div id="modal" class="modal">
             <div class="modal-content">
@@ -43,7 +45,7 @@
         <div class="col-md-5 preamble-align">
             <div>
                 <p>
-                    This free tool allows you to submit a zipped folder of .idf files which can then be processed sequentially using EnergyPlus Version 8.9.<br><br>
+                    This tool allows you to submit a zipped folder of .idf files which can then be processed sequentially using EnergyPlus Version 8.9.<br><br>
                     If you would like to check the status of your running batch jobs, please visit the 
                     <a href="jobs" style="font-weight: bold;">jobs</a> page.<br><br>
                     This page works best with Google Chrome  

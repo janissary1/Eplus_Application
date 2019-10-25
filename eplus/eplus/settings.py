@@ -121,5 +121,5 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-LOGIN_URL_REDIRECT = '/accounts/login'
+LOGIN_URL_REDIRECT = '/eplus_main'
 LOGIN_URL = '/accounts/login'
