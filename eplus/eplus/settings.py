@@ -123,3 +123,5 @@ STATIC_URL = '/static/'
 
 LOGIN_URL_REDIRECT = '/eplus_main'
 LOGIN_URL = '/accounts/login'
+
+FILE_UPLOAD_PERMISSIONS = 0o644

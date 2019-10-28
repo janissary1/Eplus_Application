@@ -2,6 +2,7 @@ from django.shortcuts import render,loader,redirect
 from django.http import HttpResponse
 from django.conf import settings
 from django.contrib.auth.decorators import login_required
+import tools
 
 # Create your views here.
 
@@ -17,10 +18,10 @@ def index(request):
 @login_required
 def process_zip(request):
     #unzip files
-    #return list of files with a path name/folder representing where they  are located
     if request.method == "POST": #request is valid
-        fptr = file(request.FILES["zip_file"])
-        fptr = open
+        #fptr = file(request.FILES["zip_file"])
+        #print(request.FILES["zip_file"].name)
+        tools.save_user_zip(request.FILES["zip_file"],request.user.username)
         return HttpResponse("Files uploaded: {}".format(request.FILES["zip_file"].name))
 
     else:
