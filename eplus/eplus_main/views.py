@@ -21,8 +21,10 @@ def process_zip(request):
     if request.method == "POST": #request is valid
         #fptr = file(request.FILES["zip_file"])
         #print(request.FILES["zip_file"].name)
+        file_name = request.FILES["zip_file"].name
         tools.save_user_zip(request.FILES["zip_file"],request.user.username)
-        return HttpResponse("Files uploaded: {}".format(request.FILES["zip_file"].name))
+        tools.compile_files(file_name,request.user.username)
+        return HttpResponse("Files uploaded: {}".format(file_name))
 
     else:
         return HttpResponse('Error invalid request', status=403)
