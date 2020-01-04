@@ -2,6 +2,7 @@ from django.shortcuts import render,loader,redirect
 from django.http import HttpResponse
 from django.conf import settings
 from django.contrib.auth.decorators import login_required
+import multiprocessing
 import tools
 
 # Create your views here.
@@ -23,8 +24,17 @@ def process_zip(request):
         #print(request.FILES["zip_file"].name)
         file_name = request.FILES["zip_file"].name
         tools.save_user_zip(request.FILES["zip_file"],request.user.username)
-        tools.compile_files(file_name,request.user.username)
-        return HttpResponse("Files uploaded: {}".format(file_name))
+        manager = multiprocessing.Manager()
+        return_dict = manager.dict()
+        try:
+            p = multiprocessing.Process(target=tools.compile_files, args=(file_name,request.user,return_dict))
+            p.start()
+            #p.join()#only for testing subprocess
+            print("Started compilation process for: ","PID: ",file_name,p.pid)
+            #print(return_dict) #only for testing subprocess
+            return HttpResponse("Files uploaded: {}".format(file_name))
+        except Exception as exc:
+            return HttpResponse("Exception Occureed {}".format(exc))
 
     else:
         return HttpResponse('Error invalid request', status=403)

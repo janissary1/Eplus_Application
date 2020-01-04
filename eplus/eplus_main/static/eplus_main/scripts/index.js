@@ -17,6 +17,6 @@ function closeModal(modal){
 }
 
 function submit(){
-    alert(document.getElementById("myfile").value);
+    //alert(document.getElementById("myfile").value);
     document.getElementById("upload").submit();
 }
