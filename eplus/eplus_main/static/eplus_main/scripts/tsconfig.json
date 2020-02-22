@@ -1,0 +1,11 @@
+{
+    "compilerOptions": {
+      "noEmitOnError": true,
+      "noImplicitAny": false,
+      "target": "es6"
+    },
+    "files": [
+      "ProcessTable.ts"
+    ],
+    "compileOnSave": true
+  }

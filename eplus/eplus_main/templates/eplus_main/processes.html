@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+{% load static %}
+<!--
+Need JS code for parsing a JSON object response from backend containing information
+about running processes
+-->
+<html>
+    <head>
+        {% include "eplus_main/head.html" %}
+
+        <!-- Loading Dojo configuration-->
+        <script src="{% static "eplus_main/scripts/dojoConfig.js" %}"></script>
+
+        <!-- Loading Dojo Itself-->
+        <script src="{% static "eplus_main/scripts/dojo-release-1.16.0/dojo/dojo.js" %}"></script>
+        <script>
+            dojoConfig= {
+                has: {
+                    "dojo-firebug": true
+                },
+                parseOnLoad: false,
+                foo: "bar",
+                async: true,
+                baseUrl: "dojo-release-1.16.0"
+            };
+        </script>
+        <!-- Loading Processes Page Javascript-->
+        <script src="{% static "eplus_main/scripts/Pages/processes.js" %}"></script>
+        <script src="{% static "eplus_main/scripts/FancyCounter.js" %}"></script>
+    </head>
+
+    <body>
+        <!-- <script type="text/javascript" data-dojo-config="parseOnLoad: true"></script> -->
+        <title>Processes</title>
+        <span data-dojo-type="FancyCounter">press me</span>
+    </body>
+</html>

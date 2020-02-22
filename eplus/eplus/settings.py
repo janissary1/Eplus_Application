@@ -25,7 +25,7 @@ SECRET_KEY = 'k6t89l4u$2vg7^pfjgo0luih20qci9-&!l_!q&rg8$5*x4=eqi'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1','danielbellissimo.ca','192.168.2.91']
+ALLOWED_HOSTS = ['127.0.0.1','danielbellissimo.ca','192.168.2.15']
 
 
 # Application definition

@@ -20,7 +20,12 @@ def index(request):
 
 @login_required
 def eplus_processes(request):
-    return HttpResponse("kek")
+    if request.user.is_authenticated:
+        context = {"username" : request.user.username}
+        return render(request,'eplus_main/processes.html',context)
+    else:
+        return redirect(settings.LOGIN_URL_REDIRECT)
+
 
 @login_required
 def process_zip(request):
@@ -44,3 +49,6 @@ def process_zip(request):
 
     else:
         return HttpResponse('Error invalid request', status=403)
+
+def Test(request):
+    return render(request,'eplus_main/test.html')
